@@ -1,0 +1,177 @@
+\documentclass{beamer}
+\usepackage{ctex, hyperref}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage[backend=bibtex]{biblatex}
+
+\author{\href{https://github.com/Galleons2029}{柳佳龙}}
+%\institute{\href{https://math.nwu.edu.cn/}{西北大学数学学院}}
+\institute{湘潭大学环境与资源学院}
+\title{高校毕业生就业预测}
+\subtitle{基于推荐系统的视角}
+\date{2023年4月11日}
+\usepackage{NWU_Beamer}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},   
+    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+
+\begin{document}
+
+\kaishu
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+    	\vspace{-0.5cm}
+        \begin{center}
+            \includegraphics[width=0.3\linewidth]{fig/xtlogo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+
+% 内容从这里开始
+\section{课题背景}
+
+\begin{frame}{为什么要做就业预测？}
+    \begin{itemize}[<+-| alert@+>] 
+    % 除了alert，手动在里面插 \pause 也能达成“一页一单元”的效果
+    
+        \item 高校扩招，每年毕业生人数逐年增加，就业形势严峻
+        \item 毕业生的就业管理和指导工作是高校人才培养的最后也是最关键的阶段。
+        \item 通过提供就业预测和推荐，大学生可以在毕业前了解潜在的就业机会，从而降低毕业后的就业压力。学校和政府部门也可以根据预测来制定更有效的就业政策。
+        \item 就业预测可以帮助大学生发现他们可能忽略的就业机会。学生可以更全面地了解自己的职业选择，从而做出更明智的决策。
+        \item 了解未来就业市场的趋势和需求可以帮助大学生提前准备。这将有助于提高他们在就业市场上的竞争力，增加获得理想工作的可能性。
+    \end{itemize}
+\end{frame}
+
+
+\section{研究现状}
+\begin{frame}{相关研究的学术史梳理}
+    \begin{itemize}
+        \item 刘艳等人（2019）\cite{1}通过使用协同过滤算法，通过挖掘学生的相关信息构造出学生的就业兴趣模型，为毕业生提供个性化的就业推荐服务。
+        \item 沈鼎等人（2019）\cite{2}使用Adaboost 集成算法开发了一套毕业生去向推荐系统，通过输入学生个人信息为其推荐日后发展方向作为规划参考。
+        \item 孙怡帆等人（2019）\cite{3}提出的使用lasso-logistics 算法为高校精准就业和点对点干预提供决策依据，从而提前做好毕业生就业服务。
+        \item 谷月(2022)
+        \cite{4}针对高校学生就业去向预测这一问题无法快速获取精准预测结果的缺陷，提出了机器学习算法的高校学生就业去向预测方法。
+        \item 管子怡等人（2022）\cite{5}广泛收集到的已毕业的大学生数据，利用支持向量机（SVM）算法构建了毕业去向预测模型。
+    \end{itemize}
+\end{frame}
+
+
+\section{研究内容}
+
+\subsection{推荐系统基础}
+%
+\begin{frame}{推荐系统的逻辑架构}
+    在获知“用户信息”“物品信息”“场景信息”的基础上，推荐系统要处理的问题可以较形式化地定义为：对于用户$U$(user),在特定场景$C$(context)下，针对海量的“物品”信息，构建一个函数$f(U,I,C)$，预测用户对特定候选物品$I$(item)的喜好程度，再根据喜好程度对所有候选物品进行排序，生成推荐列表的问题。
+\end{frame}
+\begin{frame}{推荐系统的技术架构}
+	
+\end{frame}
+
+\subsection{大学生就业推荐系统设计}
+%
+\begin{frame}{Why Beamer}
+    \begin{itemize}
+        \item \LaTeX 广泛用于学术界，期刊会议论文模板
+    \end{itemize}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{c|c}
+            Microsoft\textsuperscript{\textregistered}  Word & \LaTeX \\
+            \hline
+            文字处理工具 & 专业排版软件 \\
+            容易上手，简单直观 & 容易上手，进阶困难 \\
+            所见即所得 & {\color{blue}{所想即所得}}  \\
+            高级功能不易掌握 & 进阶难，但一般用不到 \\
+            处理长文档需要丰富经验 & 长短文档的处理基本无异 \\
+            需要花费大量时间调整格式 & 可以专注于内容本身 \\
+            公式排版差强人意 & 尤其擅长公式排版 \\
+            二进制格式，兼容性差 & 文本文件，易读、稳定 \\
+            付费商业许可 & {\color{blue}{开源，自由，免费}} \\
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+
+\subsection{大学生就业数据}
+%
+\begin{frame}{Why Beamer}
+	\begin{itemize}
+		\item \LaTeX 广泛用于学术界，期刊会议论文模板
+	\end{itemize}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c|c}
+			Microsoft\textsuperscript{\textregistered}  Word & \LaTeX \\
+			\hline
+			文字处理工具 & 专业排版软件 \\
+			容易上手，简单直观 & 容易上手，进阶困难 \\
+			所见即所得 & {\color{blue}{所想即所得}}  \\
+			高级功能不易掌握 & 进阶难，但一般用不到 \\
+			处理长文档需要丰富经验 & 长短文档的处理基本无异 \\
+			需要花费大量时间调整格式 & 可以专注于内容本身 \\
+			公式排版差强人意 & 尤其擅长公式排版 \\
+			二进制格式，兼容性差 & 文本文件，易读、稳定 \\
+			付费商业许可 & {\color{blue}{开源，自由，免费}} \\
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\section{计划进度}
+\begin{frame}
+    \begin{itemize}
+        \item 四月：了解就业推荐系统的基本原理
+        \item 五月：收集整理数据，搭建系统进行离线训练
+        \item 六月：部署系统，评估（可结合23年毕业生数据进行A/B测试）
+        \item 七月：模型改进迭代，进行在线更新
+    \end{itemize}
+\end{frame}
+
+\section{参考文献}
+
+\begin{frame}{参考链接} % [allowframebreaks]
+    \begin{thebibliography}{}
+    	\bibitem{1} Author, A., and Writer, B. (2022). An example article. Journal of Examples, 1(1), 1--10.
+    \end{thebibliography}
+    % 参考文献引用方式：
+    % \bibliography{ref}
+    % \bibliographystyle{alpha}
+    % 如果参考文献太多的话，可以像下面这样调整字体：
+    % \tiny\bibliographystyle{alpha}
+\end{frame}
+
+
+\begin{frame}
+    \begin{center}
+        {\Huge\calligra Best Wishes!}
+    \end{center}
+\end{frame}
+
+\end{document}
+

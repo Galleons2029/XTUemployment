@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{课题背景}{3}{0}{1}
+\beamer@sectionintoc {2}{研究现状}{9}{0}{2}
+\beamer@sectionintoc {3}{研究内容}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{推荐系统基础}{12}{0}{3}
+\beamer@subsectionintoc {3}{2}{大学生就业推荐系统设计}{15}{0}{3}
+\beamer@subsectionintoc {3}{3}{大学生就业数据}{17}{0}{3}
+\beamer@sectionintoc {4}{计划进度}{19}{0}{4}
+\beamer@sectionintoc {5}{参考文献}{21}{0}{5}
